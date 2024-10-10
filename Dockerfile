@@ -33,7 +33,7 @@ COPY . .
 
 # Instalar dependências do PHP e Node.js
 RUN composer install --optimize-autoloader --no-dev
-RUN npm install && npm run dev
+RUN npm install 
 
 # Dar permissão de escrita às pastas de cache
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
@@ -46,4 +46,4 @@ EXPOSE 9000
 EXPOSE 5173
 
 # Executar o servidor do Laravel e o Vite no início
-CMD php artisan serve --host=0.0.0.0 --port=8000 
+CMD php artisan serve --host=0.0.0.0 --port=8000 & npm run dev

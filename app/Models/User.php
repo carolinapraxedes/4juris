@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Enterprise;
 
 class User extends Authenticatable
 {
@@ -23,10 +24,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    protected $table = 'users';
     protected $fillable = [
         'name',
         'email',
         'password',
+        'enterprise_id',
     ];
 
     /**
@@ -58,4 +62,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    public function enterprises()
+    {
+        return $this->hasMany(Enterprise::class);
+    }
+    public function clients()
+    {
+        return $this->hasMany(Client::class);
+    }
 }
