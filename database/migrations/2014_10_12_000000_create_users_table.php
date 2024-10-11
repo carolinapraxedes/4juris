@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
 
-            $table->foreign('enterprise_id')->references('id')->on('enterprise');
+            $table->foreign('enterprise_id')->references('id')->on('enterprises');
         });
     }
 

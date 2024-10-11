@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
-use Illiminate\Validation\ValidationException;
+use Illuminate\Validation\ValidationException;
 
 class ClientController extends Controller
 {
@@ -62,7 +62,7 @@ class ClientController extends Controller
                 'error' => 'Falha na validação',
                 'messages' => $e->validator->errors()
             ], 422);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return response()->json([
                 'error' =>  'Error:' . $e->getMessage()
             ], 500);
@@ -78,11 +78,9 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        try {
-           
-    
+        try {    
             // Verifica se o cliente foi encontrado
-            if ($client === null) {
+            if (!$this->client) {
                 return response()->json(['error' => 'Client not found'], 404);
             }else{
                 // Busca o cliente pelo ID
@@ -167,7 +165,7 @@ class ClientController extends Controller
      * @param  @id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
+    public function destroy($id)
     {
         try {
             // Busca o cliente pelo ID
@@ -183,8 +181,6 @@ class ClientController extends Controller
             // Retorna uma mensagem de sucesso
             return response()->json(['message' => 'Cliente apagado com sucesso'], 200);
         } catch (\Exception $e) {
-           
-    
             // Retorna uma mensagem genérica de erro
             return response()->json(['error' => 'Não foi possível apagar o cliente. Error: '. $e->getMessage()], 500);
         }
