@@ -6,7 +6,7 @@ Este é um projeto Laravel que utiliza Laravel Jetstream e Docker para criar uma
 
 Antes de começar, certifique-se de ter os seguintes itens instalados:
 
-- [Docker](https://www.docker.com/)
+
 - [Composer](https://getcomposer.org/)
 - [Node.js](https://nodejs.org/)
 
@@ -19,26 +19,26 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
    cd <nome-do-projeto>
 
 2. **Instale as dependências do PHP**
-    Execute o comando abaixo para instalar todas as dependências necessárias:
+    <p>Execute o comando abaixo para instalar todas as dependências necessárias:</p>
    ```composer install ```
 
 3. **Instale as dependências do Node.js**:
-    ```npm install ```
+    <p>```npm install ```</p>
 
 4. **Configure o arquivo .env**:
-    Atualize as informações de configuração do banco de dados conforme necessário
+    <p>Atualize as informações de configuração do banco de dados conforme necessário.</p>
     
 
 5. **Execute as migrações do banco de dados**:
-    Após configurar o banco de dados, execute as migrações
+    <p>Após configurar o banco de dados, execute as migrações</p>
     ```php artisan migrate ```
 
 
 ## Executando o projeto
 1. **Compilar os assets do frontend**:
-    ``` npm run dev ```
+    <p>``` npm run dev ```</p>
     
 
 2. **Iniciar o servidor Laravel**:
 
-    ```php artisan migrate ```
+    <p>```php artisan migrate ```</p>
