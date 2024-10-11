@@ -19,26 +19,26 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
    cd <nome-do-projeto>
 
 2. **Instale as dependências do PHP**
-    <p>Execute o comando abaixo para instalar todas as dependências necessárias:</p>
+    Execute o comando abaixo para instalar todas as dependências necessárias:
    ```composer install ```
 
 3. **Instale as dependências do Node.js**:
-    <p>```npm install ```</p>
+    ```npm install ```
 
 4. **Configure o arquivo .env**:
-    <p>Atualize as informações de configuração do banco de dados conforme necessário.</p>
+    Atualize as informações de configuração do banco de dados conforme necessário.
     
 
 5. **Execute as migrações do banco de dados**:
-    <p>Após configurar o banco de dados, execute as migrações</p>
+    Após configurar o banco de dados, execute as migrações
     ```php artisan migrate ```
 
 
 ## Executando o projeto
 1. **Compilar os assets do frontend**:
-    <p>``` npm run dev ```</p>
+    ``` npm run dev ```
     
 
 2. **Iniciar o servidor Laravel**:
 
-    <p>```php artisan migrate ```</p>
+    ```php artisan migrate ```
